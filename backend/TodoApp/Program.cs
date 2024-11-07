@@ -8,6 +8,19 @@ var builder = WebApplication.CreateBuilder(args);
 //coonection stirng
 string connectionString = builder.Configuration.GetConnectionString("DatabaseConnection");
 
+
+// CORS politikasý tanýmla
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowReactApp", policy =>
+    {
+        policy.WithOrigins("http://localhost:3000") // React uygulamanýzýn adresini buraya yazýn
+              .AllowAnyMethod()
+              .AllowAnyHeader();
+    });
+});
+
+
 // dependency
 builder.Services.AddDbContext<ToDoContext>(options =>
     options.UseSqlServer(connectionString));
@@ -35,6 +48,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+// CORS politikasýný kullan
+app.UseCors("AllowReactApp");
 
 app.UseAuthorization();
 

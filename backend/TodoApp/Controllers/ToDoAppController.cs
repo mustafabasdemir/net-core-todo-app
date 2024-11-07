@@ -31,6 +31,7 @@ namespace TodoApp.Controllers
         }
 
         [HttpPost]
+        [Route("/Create")]
         public ActionResult Create(ToDo todo)
         {
             var response = _toDoService.Create(todo);
