@@ -1,4 +1,45 @@
+import React, { useState, useEffect } from "react";
+import { FcPieChart } from "react-icons/fc";
+import { FcLike, FcDislike } from "react-icons/fc";
+import { addToDo } from "../src/Services/addService";
+import DateCard from "./components/DateCard/DateCart";
+import AddModal from "./components/Modal/AddModal";
+import axios from "axios";
+import { getAllTodos } from "./Services/GetAllService";
+
 function App() {
+  const [showModal, setShowModal] = useState(false); // Modal'ı kontrol etmek için state
+
+  const [title, setTitle] = useState(""); // Title için state
+  const [description, setDescription] = useState(""); // Description için state
+  const [todos, setTodos] = useState([]); // Verileri tutmak için state
+  const [loading, setLoading] = useState(true); // Yükleniyor durumu
+  //api
+  const handleSave = async () => {
+    if (title) {
+      const result = await addToDo(title, description); // addToDo fonksiyonunu çağırıyoruz
+      if (result) {
+        // Başarılı bir şekilde API'den veri dönerse, modal'ı kapatıyoruz ve formu sıfırlıyoruz
+        setShowModal(false);
+        setTitle("");
+        setDescription("");
+      }
+    } else {
+      alert("Please fill in all fields.");
+    }
+  };
+
+  //getall
+
+  useEffect(() => {
+    const fetchTodos = async () => {
+      const data = await getAllTodos(); // Servisten veriyi al
+      setTodos(data); // Gelen veriyi state'e kaydet
+      setLoading(false); // Yükleniyor durumunu sonlandır
+    };
+    fetchTodos();
+  }, []);
+
   return (
     <>
       <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900">
@@ -6,286 +47,206 @@ function App() {
           <div className="max-w-3xl w-full mx-auto grid gap-4 grid-cols-1">
             <div className="grid grid-cols-12 gap-4 ">
               <div className="col-span-12 sm:col-span-4">
-                <div className="p-4 relative  bg-gray-800 border border-gray-800 shadow-lg  rounded-2xl">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-14 w-14  absolute bottom-4 right-3 text-green-400"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z" />
-                    <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z" />
-                  </svg>
-
-                  <div className="text-2xl text-gray-100 font-medium leading-8 mt-5">
+                <div className="p-3 relative  bg-gray-800 border border-gray-800 shadow-lg  rounded-2xl">
+                  <FcPieChart className="h-14 w-14  absolute bottom-4 right-3" />
+                  <div className="text-2xl text-gray-100 font-medium leading-8 mt-2">
                     20
                   </div>
-                  <div className="text-sm text-gray-500">Components</div>
+                  <div className="text-m text-gray-500">Tüm Görevler</div>
                 </div>
               </div>
               <div className="col-span-12 sm:col-span-4">
-                <div className="p-4 relative  bg-gray-800 border border-gray-800 shadow-lg  rounded-2xl">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-14 w-14  absolute bottom-4 right-3 text-blue-500"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
-                  </svg>
+                <div className="p-3 relative  bg-gray-800 border border-gray-800 shadow-lg  rounded-2xl">
+                  <FcLike className="h-14 w-14  absolute bottom-4 right-3 " />
                   <div className="flex justify-between items-center ">
                     <i className="fab fa-behance text-xl text-gray-400"></i>
                   </div>
-                  <div className="text-2xl text-gray-100 font-medium leading-8 mt-5">
+                  <div className="text-2xl text-gray-100 font-medium leading-8 mt-2">
                     99
                   </div>
-                  <div className="text-sm text-gray-500">Projects</div>
+                  <div className="text-m text-gray-500">Yapılan Görevler</div>
                 </div>
               </div>
               <div className="col-span-12 sm:col-span-4">
-                <div className="p-4 relative  bg-gray-800 border border-gray-800 shadow-lg  rounded-2xl">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-14 w-14  absolute bottom-4 right-3 text-yellow-300"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" />
-                  </svg>
+                <div className="p-3 relative  bg-gray-800 border border-gray-800 shadow-lg  rounded-2xl">
+                  <FcDislike className="h-14 w-14  absolute bottom-4 right-3" />
                   <div className="flex justify-between items-center ">
                     <i className="fab fa-codepen text-xl text-gray-400"></i>
                   </div>
-                  <div className="text-2xl text-gray-100 font-medium leading-8 mt-5">
+                  <div className="text-2xl text-gray-100 font-medium leading-8 mt-2">
                     50
                   </div>
-                  <div className="text-sm text-gray-500">Pen Items</div>
+                  <div className="text-m text-gray-500">Yapılmayanlar</div>
                 </div>
               </div>
             </div>
+            {/*  */}
             <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
-              <div className="flex flex-col p-4 relative items-center justify-center bg-gray-800 border border-gray-800 shadow-lg  rounded-2xl">
-                <div className="">
-                  <div className="text-center p-5 flex-auto justify-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="w-4 h-4 -m-1 flex items-center text-blue-400 mx-auto"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="w-16 h-16 flex items-center text-gray-600 mx-auto"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" />
-                    </svg>
-                    <h2 className="text-xl font-bold py-4 text-gray-200">
-                      Are you sure?
+              <div className="flex flex-col p-3 relative items-center justify-center bg-gray-800 border border-gray-800 shadow-lg  rounded-2xl ">
+                {/* <DateCard/> */}
+                <div className="w-full h-[50%] flex justify-end space-x-4 ">
+                  {/* söz */}
+                  <div className="w-[60%] h-[100%] bg-gray-50 rounded-lg shadow-md overflow-hidden border border-gray-300 p-1">
+                    <h2 className="text-center text-sm font-semibold text-gray-700 mb-1">
+                      Günün Sözü
                     </h2>
-                    <p className="text-sm text-gray-500 px-8">
-                      Do you really want to delete your account? This process
-                      cannot be undone
+
+                    <p className="text-gray-600 leading-relaxed text-center text-sm font-semibold">
+                      Nerede olursan ol, Allah'a karşı sorumluluğunun bilincinde
+                      ol! Kötülüğün peşinden iyi bir şey yap ki onu yok etsin.
                     </p>
                   </div>
-                  <div className="p-3  mt-2 text-center space-x-4 md:block">
-                    <button className="mb-2 md:mb-0 bg-gray-700 px-5 py-2 text-sm shadow-sm font-medium tracking-wider border-2 border-gray-600 hover:border-gray-700 text-gray-300 rounded-full hover:shadow-lg hover:bg-gray-800 transition ease-in duration-300">
-                      Cancel
-                    </button>
-                    <button className="bg-green-400 hover:bg-green-500 px-5 ml-4 py-2 text-sm shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-green-300 hover:border-green-500 text-white rounded-full transition ease-in duration-300">
-                      Confirm
-                    </button>
+
+                  {/* takvim */}
+                  <div className="w-[40%] h-[100%] bg-white rounded-lg overflow-hidden border border-gray-300">
+                    <div className="bg-red-500 text-white text-center">
+                      <p className="text-lg font-bold">Kasım</p>
+                      <p className="text-sm p-1">2024</p>
+                    </div>
+                    <div className="flex flex-col items-center">
+                      <p className="text-5xl font-bold text-gray-800">07</p>
+                      <p className="text-lg text-gray-600">Perşembe</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className=" relative w-full h-[50%] group mt-2 border border-gray-700">
+                  {/* gif */}
+                  <img
+                    src="/210726.gif"
+                    alt="Çay İçelim Mi ?"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute ml-44 top-2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="relative bg-white text-black text-sm p-3 rounded-lg shadow-lg border border-gray-600">
+                      Çay İçelim Mi ? 🍵
+                      {/* konusma balonu baslangic */}
+                      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full border-[10px] border-transparent border-t-white"></div>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <div className="flex flex-col space-y-4">
-                <div className="flex flex-col p-4 bg-gray-800 border-gray-800 shadow-md hover:shodow-lg rounded-2xl cursor-pointer transition ease-in duration-500  transform hover:scale-105">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center mr-auto">
-                      <div className="inline-flex w-12 h-12">
-                        <img
-                          src="https://tailwindcomponents.com/storage/avatars/njkIbPhyZCftc4g9XbMWwVsa7aGVPajYLRXhEeoo.jpg"
-                          alt="aji"
-                          className=" relative w-12 h-12 object-cover rounded-2xl"
-                        />
-                        <span className="animate-ping absolute w-12 h-12 inline-flex border-2 rounded-2xl border-green-400 opacity-75"></span>
-                        <span></span>
-                      </div>
+              {/* todoo  */}
 
-                      <div className="flex flex-col ml-3">
-                        <div className="font-medium leading-none text-gray-100">
-                          Aji
+              <div className="h-[400px] bg-transparent  overflow-y-auto">
+                <div className="flex flex-col space-y-4">
+                  {/* Modal */}
+                  {/* <AddModal /> */}
+
+                  <button
+                    onClick={() => setShowModal(true)}
+                    className="block w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  >
+                    Add ToDo
+                  </button>
+
+                  {/* Modal Açıldığında Görünecek Kısım */}
+                  {showModal ? (
+                    <>
+                      {/* Modal Arka Plan */}
+                      <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+
+                      {/* Modal İçeriği */}
+                      <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+                        <div className="relative w-auto my-6 mx-auto max-w-3xl">
+                          {/* Modal Content */}
+                          <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                            {/* Modal Başlık (Header) */}
+                            <div className="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
+                              <h3 className="text-md font-semibold mx-auto">
+                                Add ToDo
+                              </h3>
+                            </div>
+
+                            {/* Modal Gövdesi (Body) */}
+                            <div className="p-4 md:p-5">
+                              <form className="space-y-4" action="#">
+                                <div>
+                                  <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                                    Title
+                                  </label>
+                                  <input
+                                    type="text"
+                                    name="title"
+                                    value={title}
+                                    onChange={(e) => setTitle(e.target.value)}
+                                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                    placeholder="clean the house"
+                                    required
+                                  />
+                                </div>
+                                <div>
+                                  <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                                    Description
+                                  </label>
+                                  <input
+                                    type="text"
+                                    name="description"
+                                    value={description}
+                                    onChange={(e) =>
+                                      setDescription(e.target.value)
+                                    }
+                                    placeholder="I will try to clean the house better"
+                                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                  />
+                                </div>
+                              </form>
+                            </div>
+
+                            {/* Modal Alt Bilgisi (Footer) */}
+                            <div className="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
+                              <button
+                                className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                type="button"
+                                onClick={() => setShowModal(false)} // Modal'ı kapat
+                              >
+                                Close
+                              </button>
+                              <button
+                                className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                type="button"
+                                onClick={() => handleSave()} // Modal'ı kapat
+                              >
+                                Save Changes
+                              </button>
+                            </div>
+                          </div>
                         </div>
-                        <p className="text-sm text-gray-500 leading-none mt-1">
-                          UI/UX Designer
-                        </p>
                       </div>
-                    </div>
-                    <a
-                      href="#"
-                      className="flex-no-shrink text-xs  font-medium tracking-wider  text-gray-400 hover:text-green-400 transition ease-in duration-300 mr-2"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-5 w-5"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                      >
-                        <path d="M4 5a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2h-1.586a1 1 0 01-.707-.293l-1.121-1.121A2 2 0 0011.172 3H8.828a2 2 0 00-1.414.586L6.293 4.707A1 1 0 015.586 5H4zm6 9a3 3 0 100-6 3 3 0 000 6z"></path>
-                      </svg>
-                    </a>
-                    <a
-                      hrf="#"
-                      className="flex-no-shrink text-xs  font-medium tracking-wider  text-gray-400 hover:text-green-400 transition ease-in duration-300 ml-2"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-5 w-5"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                      >
-                        <path d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0A5 5 0 015 8a1 1 0 00-2 0 7.001 7.001 0 006 6.93V17H6a1 1 0 100 2h8a1 1 0 100-2h-3v-2.07z"></path>
-                      </svg>
-                    </a>
-                  </div>
-                </div>
+                    </>
+                  ) : null}
 
-                <div className="flex flex-col p-4 bg-gray-800 border-gray-800 shadow-md hover:shodow-lg rounded-2xl cursor-pointer transition ease-in duration-500  transform hover:scale-105">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center mr-auto">
-                      <div className="inline-flex w-12 h-12">
-                        <img
-                          src="https://tailwindcomponents.com/storage/avatars/njkIbPhyZCftc4g9XbMWwVsa7aGVPajYLRXhEeoo.jpg"
-                          alt="aji"
-                          className=" relative p-1 w-12 h-12 object-cover rounded-2xl"
-                        />
-                        <span className="absolute w-12 h-12 inline-flex border-2 rounded-2xl border-green-400 opacity-75"></span>
-                        <span></span>
+                  {/* 1 */}
+                  {todos.map((todo) => (
+         
+                  <div className="flex flex-col p-4 bg-gray-800 border-gray-800 shadow-md hover:bg-gray-600 rounded-2xl cursor-pointer">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center mr-auto">
+                        <FcLike className="text-3xl" style={{ opacity: todo.isCompleted ? 1 : 0.4 }}  />
+                        {todo.isCompleted = !todo.isCompleted}
+
+                        <div className="flex flex-col ml-3 min-w-0">
+                          <div className="font-medium leading-none text-gray-100">
+                            {todo.title}
+                          </div>
+                          <p className="text-sm text-gray-500 leading-none mt-1 truncate">
+                            {todo.description}
+                          </p>
+                        </div>
                       </div>
-
                       <div className="flex flex-col ml-3 min-w-0">
-                        <div className="font-medium leading-none text-gray-100">
-                          Groupname
+                        <div className="flex">
+                          <FcDislike className="text-3xl"  style={{ opacity: todo.isCompleted ? 1 : 0.4 }} />
                         </div>
-                        <p className="text-sm text-gray-500 leading-none mt-1 truncate">
-                          Beautiful hand-crafted SVG icons
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex flex-col ml-3 min-w-0">
-                      <span className="text-xs text-gray-500 text-right mb-1">
-                        9:02pm
-                      </span>
-                      <div className="flex">
-                        <a className="flex-no-shrink text-xs  font-medium tracking-wider  text-gray-400 hover:text-green-400 transition ease-in duration-300 mr-2">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="h-5 w-5"
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                          >
-                            <path d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM12.293 7.293a1 1 0 011.414 0L15 8.586l1.293-1.293a1 1 0 111.414 1.414L16.414 10l1.293 1.293a1 1 0 01-1.414 1.414L15 11.414l-1.293 1.293a1 1 0 01-1.414-1.414L13.586 10l-1.293-1.293a1 1 0 010-1.414z" />
-                          </svg>
-                        </a>
-                        <span className="inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-green-100 bg-green-400 rounded-full ml-2">
-                          99
-                        </span>
                       </div>
                     </div>
                   </div>
-                </div>
 
-                <div className="flex flex-col p-4 bg-gray-800 border-gray-800 shadow-md hover:shodow-lg rounded-2xl cursor-pointer transition ease-in duration-500  transform hover:scale-105">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center mr-auto">
-                      <div className="inline-flex w-12 h-12">
-                        <img
-                          src="https://tailwindcomponents.com/storage/avatars/njkIbPhyZCftc4g9XbMWwVsa7aGVPajYLRXhEeoo.jpg"
-                          alt="aji"
-                          className=" relative p-1 w-12 h-12 object-cover rounded-2xl"
-                        />
-                        <span className="absolute w-12 h-12 inline-flex border-2 rounded-2xl border-gray-600 opacity-75"></span>
-                        <span></span>
-                      </div>
-
-                      <div className="flex flex-col ml-3 min-w-0">
-                        <div className="font-medium leading-none text-gray-100">
-                          Ajimon
-                        </div>
-                        <p className="text-sm text-gray-500 leading-none mt-1 truncate">
-                          Jul 066, 2021, 8.25 PM
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex flex-col ml-3 min-w-0">
-                      <div className="flex">
-                        <h5 className="flex items-center font-medium text-gray-300 mr-2">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="h-4 w-4"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path d="M9 8h6m-5 0a3 3 0 110 6H9l3 3m-3-6h6m6 1a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>{" "}
-                          1800
-                        </h5>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-6 w-6 text-green-400 ml-2"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                        >
-                          <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex flex-col p-4 bg-gray-800 border border-gray-800 shadow-md hover:text-green-500 text-gray-400 hover:shodow-lg rounded-2xl transition ease-in duration-500  transform hover:scale-105 cursor-pointer">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center mr-auto">
-                      <div className="-space-x-5 flex ">
-                        <img
-                          src="https://tailwindcomponents.com/storage/avatars/njkIbPhyZCftc4g9XbMWwVsa7aGVPajYLRXhEeoo.jpg"
-                          alt="aji"
-                          className=" relative p-1 w-12 h-12 object-cover rounded-2xl border-2 border-gray-600 bg-gray-800"
-                        />
-                        <img
-                          src="https://tailwindcomponents.com/storage/avatars/njkIbPhyZCftc4g9XbMWwVsa7aGVPajYLRXhEeoo.jpg"
-                          alt="aji"
-                          className=" relative p-1 w-12 h-12 object-cover rounded-2xl border-2 border-gray-600 bg-gray-800 shadow"
-                        />
-                      </div>
-
-                      <div className="flex flex-col ml-3 min-w-0">
-                        <div className="font-medium leading-none text-gray-100">
-                          Pending Request{" "}
-                        </div>
-                        <p className="text-sm text-gray-500 leading-none mt-1 truncate">
-                          Jul 066, 2021, 8.25 PM
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex flex-col ml-3 min-w-0">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6 ml-2"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path d="M9 5l7 7-7 7"></path>
-                      </svg>
-                    </div>
-                  </div>
+                ))}
                 </div>
               </div>
+              {/* todo end */}
             </div>
           </div>
         </div>
