@@ -1,42 +1,42 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\basde\\OneDrive\\Masa\u00FCst\u00FC\\React TodoApp\\BackEnd\\TodoApp\\",
+  "WorkspaceRootPath": "C:\\Users\\basde\\OneDrive\\Masa\u00FCst\u00FC\\net-core-todo-app\\backend\\TodoApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0F496E8B-7330-4B37-9B43-7F667EFBD9DD}|TodoApp.csproj|c:\\users\\basde\\onedrive\\masa\u00FCst\u00FC\\react todoapp\\backend\\todoapp\\repository\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F496E8B-7330-4B37-9B43-7F667EFBD9DD}|TodoApp.csproj|solutionrelative:repository\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F496E8B-7330-4B37-9B43-7F667EFBD9DD}|TodoApp.csproj|c:\\users\\basde\\onedrive\\masa\u00FCst\u00FC\\react todoapp\\backend\\todoapp\\controllers\\todoappcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F496E8B-7330-4B37-9B43-7F667EFBD9DD}|TodoApp.csproj|solutionrelative:controllers\\todoappcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F496E8B-7330-4B37-9B43-7F667EFBD9DD}|TodoApp.csproj|c:\\users\\basde\\onedrive\\masa\u00FCst\u00FC\\react todoapp\\backend\\todoapp\\service\\todoservicemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F496E8B-7330-4B37-9B43-7F667EFBD9DD}|TodoApp.csproj|solutionrelative:service\\todoservicemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F496E8B-7330-4B37-9B43-7F667EFBD9DD}|TodoApp.csproj|c:\\users\\basde\\onedrive\\masa\u00FCst\u00FC\\react todoapp\\backend\\todoapp\\service\\itodoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F496E8B-7330-4B37-9B43-7F667EFBD9DD}|TodoApp.csproj|solutionrelative:service\\itodoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F496E8B-7330-4B37-9B43-7F667EFBD9DD}|TodoApp.csproj|c:\\users\\basde\\onedrive\\masa\u00FCst\u00FC\\react todoapp\\backend\\todoapp\\models\\todo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F496E8B-7330-4B37-9B43-7F667EFBD9DD}|TodoApp.csproj|solutionrelative:models\\todo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F496E8B-7330-4B37-9B43-7F667EFBD9DD}|TodoApp.csproj|c:\\users\\basde\\onedrive\\masa\u00FCst\u00FC\\react todoapp\\backend\\todoapp\\repository\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F496E8B-7330-4B37-9B43-7F667EFBD9DD}|TodoApp.csproj|solutionrelative:repository\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F496E8B-7330-4B37-9B43-7F667EFBD9DD}|TodoApp.csproj|c:\\users\\basde\\onedrive\\masa\u00FCst\u00FC\\react todoapp\\backend\\todoapp\\data\\todocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F496E8B-7330-4B37-9B43-7F667EFBD9DD}|TodoApp.csproj|solutionrelative:data\\todocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F496E8B-7330-4B37-9B43-7F667EFBD9DD}|TodoApp.csproj|c:\\users\\basde\\onedrive\\masa\u00FCst\u00FC\\react todoapp\\backend\\todoapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0F496E8B-7330-4B37-9B43-7F667EFBD9DD}|TodoApp.csproj|c:\\users\\basde\\onedrive\\masa\u00FCst\u00FC\\net-core-todo-app\\backend\\todoapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0F496E8B-7330-4B37-9B43-7F667EFBD9DD}|TodoApp.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F496E8B-7330-4B37-9B43-7F667EFBD9DD}|TodoApp.csproj|c:\\users\\basde\\onedrive\\masa\u00FCst\u00FC\\react todoapp\\backend\\todoapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{0F496E8B-7330-4B37-9B43-7F667EFBD9DD}|TodoApp.csproj|c:\\users\\basde\\onedrive\\masa\u00FCst\u00FC\\net-core-todo-app\\backend\\todoapp\\controllers\\todoappcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F496E8B-7330-4B37-9B43-7F667EFBD9DD}|TodoApp.csproj|solutionrelative:controllers\\todoappcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F496E8B-7330-4B37-9B43-7F667EFBD9DD}|TodoApp.csproj|c:\\users\\basde\\onedrive\\masa\u00FCst\u00FC\\net-core-todo-app\\backend\\todoapp\\models\\todo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F496E8B-7330-4B37-9B43-7F667EFBD9DD}|TodoApp.csproj|solutionrelative:models\\todo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F496E8B-7330-4B37-9B43-7F667EFBD9DD}|TodoApp.csproj|c:\\users\\basde\\onedrive\\masa\u00FCst\u00FC\\net-core-todo-app\\backend\\todoapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{0F496E8B-7330-4B37-9B43-7F667EFBD9DD}|TodoApp.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F496E8B-7330-4B37-9B43-7F667EFBD9DD}|TodoApp.csproj|c:\\users\\basde\\onedrive\\masa\u00FCst\u00FC\\net-core-todo-app\\backend\\todoapp\\data\\todocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F496E8B-7330-4B37-9B43-7F667EFBD9DD}|TodoApp.csproj|solutionrelative:data\\todocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F496E8B-7330-4B37-9B43-7F667EFBD9DD}|TodoApp.csproj|c:\\users\\basde\\onedrive\\masa\u00FCst\u00FC\\net-core-todo-app\\backend\\todoapp\\repository\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F496E8B-7330-4B37-9B43-7F667EFBD9DD}|TodoApp.csproj|solutionrelative:repository\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F496E8B-7330-4B37-9B43-7F667EFBD9DD}|TodoApp.csproj|c:\\users\\basde\\onedrive\\masa\u00FCst\u00FC\\net-core-todo-app\\backend\\todoapp\\repository\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F496E8B-7330-4B37-9B43-7F667EFBD9DD}|TodoApp.csproj|solutionrelative:repository\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F496E8B-7330-4B37-9B43-7F667EFBD9DD}|TodoApp.csproj|c:\\users\\basde\\onedrive\\masa\u00FCst\u00FC\\net-core-todo-app\\backend\\todoapp\\service\\itodoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F496E8B-7330-4B37-9B43-7F667EFBD9DD}|TodoApp.csproj|solutionrelative:service\\itodoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F496E8B-7330-4B37-9B43-7F667EFBD9DD}|TodoApp.csproj|c:\\users\\basde\\onedrive\\masa\u00FCst\u00FC\\net-core-todo-app\\backend\\todoapp\\service\\todoservicemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F496E8B-7330-4B37-9B43-7F667EFBD9DD}|TodoApp.csproj|solutionrelative:service\\todoservicemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,28 +46,28 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "ToDoServiceManager.cs",
-              "DocumentMoniker": "C:\\Users\\basde\\OneDrive\\Masa\u00FCst\u00FC\\React TodoApp\\BackEnd\\TodoApp\\Service\\ToDoServiceManager.cs",
+              "DocumentMoniker": "C:\\Users\\basde\\OneDrive\\Masa\u00FCst\u00FC\\net-core-todo-app\\backend\\TodoApp\\Service\\ToDoServiceManager.cs",
               "RelativeDocumentMoniker": "Service\\ToDoServiceManager.cs",
-              "ToolTip": "C:\\Users\\basde\\OneDrive\\Masa\u00FCst\u00FC\\React TodoApp\\BackEnd\\TodoApp\\Service\\ToDoServiceManager.cs",
+              "ToolTip": "C:\\Users\\basde\\OneDrive\\Masa\u00FCst\u00FC\\net-core-todo-app\\backend\\TodoApp\\Service\\ToDoServiceManager.cs",
               "RelativeToolTip": "Service\\ToDoServiceManager.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAAAAAA",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAgwBgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-06T18:05:13.178Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "IToDoService.cs",
-              "DocumentMoniker": "C:\\Users\\basde\\OneDrive\\Masa\u00FCst\u00FC\\React TodoApp\\BackEnd\\TodoApp\\Service\\IToDoService.cs",
+              "DocumentMoniker": "C:\\Users\\basde\\OneDrive\\Masa\u00FCst\u00FC\\net-core-todo-app\\backend\\TodoApp\\Service\\IToDoService.cs",
               "RelativeDocumentMoniker": "Service\\IToDoService.cs",
-              "ToolTip": "C:\\Users\\basde\\OneDrive\\Masa\u00FCst\u00FC\\React TodoApp\\BackEnd\\TodoApp\\Service\\IToDoService.cs",
+              "ToolTip": "C:\\Users\\basde\\OneDrive\\Masa\u00FCst\u00FC\\net-core-todo-app\\backend\\TodoApp\\Service\\IToDoService.cs",
               "RelativeToolTip": "Service\\IToDoService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAqwAQAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -76,13 +76,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "GenericRepository.cs",
-              "DocumentMoniker": "C:\\Users\\basde\\OneDrive\\Masa\u00FCst\u00FC\\React TodoApp\\BackEnd\\TodoApp\\Repository\\GenericRepository.cs",
+              "DocumentMoniker": "C:\\Users\\basde\\OneDrive\\Masa\u00FCst\u00FC\\net-core-todo-app\\backend\\TodoApp\\Repository\\GenericRepository.cs",
               "RelativeDocumentMoniker": "Repository\\GenericRepository.cs",
-              "ToolTip": "C:\\Users\\basde\\OneDrive\\Masa\u00FCst\u00FC\\React TodoApp\\BackEnd\\TodoApp\\Repository\\GenericRepository.cs",
+              "ToolTip": "C:\\Users\\basde\\OneDrive\\Masa\u00FCst\u00FC\\net-core-todo-app\\backend\\TodoApp\\Repository\\GenericRepository.cs",
               "RelativeToolTip": "Repository\\GenericRepository.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAlwCoAAAAgAAAA",
+              "ViewState": "AQIAACEAAAAAAAAAAAAtwCEAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-06T17:35:21.964Z",
               "EditorCaption": ""
@@ -91,22 +91,22 @@
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "IGenericRepository.cs",
-              "DocumentMoniker": "C:\\Users\\basde\\OneDrive\\Masa\u00FCst\u00FC\\React TodoApp\\BackEnd\\TodoApp\\Repository\\IGenericRepository.cs",
+              "DocumentMoniker": "C:\\Users\\basde\\OneDrive\\Masa\u00FCst\u00FC\\net-core-todo-app\\backend\\TodoApp\\Repository\\IGenericRepository.cs",
               "RelativeDocumentMoniker": "Repository\\IGenericRepository.cs",
-              "ToolTip": "C:\\Users\\basde\\OneDrive\\Masa\u00FCst\u00FC\\React TodoApp\\BackEnd\\TodoApp\\Repository\\IGenericRepository.cs",
+              "ToolTip": "C:\\Users\\basde\\OneDrive\\Masa\u00FCst\u00FC\\net-core-todo-app\\backend\\TodoApp\\Repository\\IGenericRepository.cs",
               "RelativeToolTip": "Repository\\IGenericRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAsAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAkAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-06T17:26:05.598Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "ToDoContext.cs",
-              "DocumentMoniker": "C:\\Users\\basde\\OneDrive\\Masa\u00FCst\u00FC\\React TodoApp\\BackEnd\\TodoApp\\Data\\ToDoContext.cs",
+              "DocumentMoniker": "C:\\Users\\basde\\OneDrive\\Masa\u00FCst\u00FC\\net-core-todo-app\\backend\\TodoApp\\Data\\ToDoContext.cs",
               "RelativeDocumentMoniker": "Data\\ToDoContext.cs",
-              "ToolTip": "C:\\Users\\basde\\OneDrive\\Masa\u00FCst\u00FC\\React TodoApp\\BackEnd\\TodoApp\\Data\\ToDoContext.cs",
+              "ToolTip": "C:\\Users\\basde\\OneDrive\\Masa\u00FCst\u00FC\\net-core-todo-app\\backend\\TodoApp\\Data\\ToDoContext.cs",
               "RelativeToolTip": "Data\\ToDoContext.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -115,23 +115,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 3,
               "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\basde\\OneDrive\\Masa\u00FCst\u00FC\\React TodoApp\\BackEnd\\TodoApp\\appsettings.json",
+              "DocumentMoniker": "C:\\Users\\basde\\OneDrive\\Masa\u00FCst\u00FC\\net-core-todo-app\\backend\\TodoApp\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\basde\\OneDrive\\Masa\u00FCst\u00FC\\React TodoApp\\BackEnd\\TodoApp\\appsettings.json",
+              "ToolTip": "C:\\Users\\basde\\OneDrive\\Masa\u00FCst\u00FC\\net-core-todo-app\\backend\\TodoApp\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAB1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-11-06T16:56:58.215Z"
+              "WhenOpened": "2024-11-06T16:56:58.215Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "ToDo.cs",
-              "DocumentMoniker": "C:\\Users\\basde\\OneDrive\\Masa\u00FCst\u00FC\\React TodoApp\\BackEnd\\TodoApp\\Models\\ToDo.cs",
+              "DocumentMoniker": "C:\\Users\\basde\\OneDrive\\Masa\u00FCst\u00FC\\net-core-todo-app\\backend\\TodoApp\\Models\\ToDo.cs",
               "RelativeDocumentMoniker": "Models\\ToDo.cs",
-              "ToolTip": "C:\\Users\\basde\\OneDrive\\Masa\u00FCst\u00FC\\React TodoApp\\BackEnd\\TodoApp\\Models\\ToDo.cs",
+              "ToolTip": "C:\\Users\\basde\\OneDrive\\Masa\u00FCst\u00FC\\net-core-todo-app\\backend\\TodoApp\\Models\\ToDo.cs",
               "RelativeToolTip": "Models\\ToDo.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -142,24 +143,24 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "ToDoAppController.cs",
-              "DocumentMoniker": "C:\\Users\\basde\\OneDrive\\Masa\u00FCst\u00FC\\React TodoApp\\BackEnd\\TodoApp\\Controllers\\ToDoAppController.cs",
+              "DocumentMoniker": "C:\\Users\\basde\\OneDrive\\Masa\u00FCst\u00FC\\net-core-todo-app\\backend\\TodoApp\\Controllers\\ToDoAppController.cs",
               "RelativeDocumentMoniker": "Controllers\\ToDoAppController.cs",
-              "ToolTip": "C:\\Users\\basde\\OneDrive\\Masa\u00FCst\u00FC\\React TodoApp\\BackEnd\\TodoApp\\Controllers\\ToDoAppController.cs",
+              "ToolTip": "C:\\Users\\basde\\OneDrive\\Masa\u00FCst\u00FC\\net-core-todo-app\\backend\\TodoApp\\Controllers\\ToDoAppController.cs",
               "RelativeToolTip": "Controllers\\ToDoAppController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADwAAAANAAAA",
+              "ViewState": "AQIAABYAAAAAAAAAAAAgwCgAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-06T16:42:06.52Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\basde\\OneDrive\\Masa\u00FCst\u00FC\\React TodoApp\\BackEnd\\TodoApp\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\basde\\OneDrive\\Masa\u00FCst\u00FC\\net-core-todo-app\\backend\\TodoApp\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\basde\\OneDrive\\Masa\u00FCst\u00FC\\React TodoApp\\BackEnd\\TodoApp\\Program.cs",
+              "ToolTip": "C:\\Users\\basde\\OneDrive\\Masa\u00FCst\u00FC\\net-core-todo-app\\backend\\TodoApp\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAADQAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-06T16:37:44.541Z",
               "EditorCaption": ""
