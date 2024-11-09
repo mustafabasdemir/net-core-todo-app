@@ -5,13 +5,11 @@ const AddModal = () => {
   const [showModal, setShowModal] = useState(false); // Modal'ı kontrol etmek için state
   const [title, setTitle] = useState(""); // Title için state
   const [description, setDescription] = useState(""); // Description için state
-  const API_URL = "http://localhost:5062/Create";
 
   const handleSave = async () => {
     if (title) {
       const result = await addToDo(title, description); // addToDo fonksiyonunu çağırıyoruz
       if (result) {
-        // Başarılı bir şekilde API'den veri dönerse, modal'ı kapatıyoruz ve formu sıfırlıyoruz
         setShowModal(false);
         setTitle("");
         setDescription("");

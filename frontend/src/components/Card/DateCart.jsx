@@ -21,7 +21,7 @@ const DateCard = () => {
     {/* söz */}
     <div className="w-[60%] h-[100%] bg-gray-50 rounded-lg shadow-md overflow-hidden border border-gray-300 p-1">
       <h2 className="text-center text-sm font-semibold text-gray-700 mb-1">
-        Söz
+        Günün Sözü
       </h2>
 
       <p className="text-gray-600 leading-relaxed text-center text-sm font-semibold">
@@ -42,9 +42,6 @@ const DateCard = () => {
       </div>
     </div>
   </div>
-
-
-
 
   );
 };
