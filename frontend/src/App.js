@@ -4,7 +4,6 @@ import { FcLike, FcDislike } from "react-icons/fc";
 import { addToDo } from "../src/Services/addService";
 import DateCard from "./components/DateCard/DateCart";
 import AddModal from "./components/Modal/AddModal";
-import axios from "axios";
 import { getAllTodos } from "./Services/GetAllService";
 
 function App() {
@@ -29,6 +28,9 @@ function App() {
     }
   };
 
+ const kalpTiklandi = (id) => {
+  alert(id);
+ }
   //getall
 
   useEffect(() => {
@@ -83,32 +85,8 @@ function App() {
             {/*  */}
             <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
               <div className="flex flex-col p-3 relative items-center justify-center bg-gray-800 border border-gray-800 shadow-lg  rounded-2xl ">
-                {/* <DateCard/> */}
-                <div className="w-full h-[50%] flex justify-end space-x-4 ">
-                  {/* söz */}
-                  <div className="w-[60%] h-[100%] bg-gray-50 rounded-lg shadow-md overflow-hidden border border-gray-300 p-1">
-                    <h2 className="text-center text-sm font-semibold text-gray-700 mb-1">
-                      Günün Sözü
-                    </h2>
-
-                    <p className="text-gray-600 leading-relaxed text-center text-sm font-semibold">
-                      Nerede olursan ol, Allah'a karşı sorumluluğunun bilincinde
-                      ol! Kötülüğün peşinden iyi bir şey yap ki onu yok etsin.
-                    </p>
-                  </div>
-
-                  {/* takvim */}
-                  <div className="w-[40%] h-[100%] bg-white rounded-lg overflow-hidden border border-gray-300">
-                    <div className="bg-red-500 text-white text-center">
-                      <p className="text-lg font-bold">Kasım</p>
-                      <p className="text-sm p-1">2024</p>
-                    </div>
-                    <div className="flex flex-col items-center">
-                      <p className="text-5xl font-bold text-gray-800">07</p>
-                      <p className="text-lg text-gray-600">Perşembe</p>
-                    </div>
-                  </div>
-                </div>
+                <DateCard/>
+        
 
                 <div className=" relative w-full h-[50%] group mt-2 border border-gray-700">
                   {/* gif */}
@@ -132,95 +110,12 @@ function App() {
               <div className="h-[400px] bg-transparent  overflow-y-auto">
                 <div className="flex flex-col space-y-4">
                   {/* Modal */}
-                  {/* <AddModal /> */}
-
-                  <button
-                    onClick={() => setShowModal(true)}
-                    className="block w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                  >
-                    Add ToDo
-                  </button>
-
-                  {/* Modal Açıldığında Görünecek Kısım */}
-                  {showModal ? (
-                    <>
-                      {/* Modal Arka Plan */}
-                      <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
-
-                      {/* Modal İçeriği */}
-                      <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
-                        <div className="relative w-auto my-6 mx-auto max-w-3xl">
-                          {/* Modal Content */}
-                          <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
-                            {/* Modal Başlık (Header) */}
-                            <div className="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
-                              <h3 className="text-md font-semibold mx-auto">
-                                Add ToDo
-                              </h3>
-                            </div>
-
-                            {/* Modal Gövdesi (Body) */}
-                            <div className="p-4 md:p-5">
-                              <form className="space-y-4" action="#">
-                                <div>
-                                  <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                                    Title
-                                  </label>
-                                  <input
-                                    type="text"
-                                    name="title"
-                                    value={title}
-                                    onChange={(e) => setTitle(e.target.value)}
-                                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                                    placeholder="clean the house"
-                                    required
-                                  />
-                                </div>
-                                <div>
-                                  <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                                    Description
-                                  </label>
-                                  <input
-                                    type="text"
-                                    name="description"
-                                    value={description}
-                                    onChange={(e) =>
-                                      setDescription(e.target.value)
-                                    }
-                                    placeholder="I will try to clean the house better"
-                                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                                  />
-                                </div>
-                              </form>
-                            </div>
-
-                            {/* Modal Alt Bilgisi (Footer) */}
-                            <div className="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
-                              <button
-                                className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                                type="button"
-                                onClick={() => setShowModal(false)} // Modal'ı kapat
-                              >
-                                Close
-                              </button>
-                              <button
-                                className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                                type="button"
-                                onClick={() => handleSave()} // Modal'ı kapat
-                              >
-                                Save Changes
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </>
-                  ) : null}
+                  <AddModal />
 
                   {/* 1 */}
-                  {todos.map((todo) => (
+                  {todos.map((todo, key) => (
          
-                  <div className="flex flex-col p-4 bg-gray-800 border-gray-800 shadow-md hover:bg-gray-600 rounded-2xl cursor-pointer">
+                  <div key={key} className="flex flex-col p-4 bg-gray-800 border-gray-800 shadow-md hover:bg-gray-600 rounded-2xl cursor-pointer">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center mr-auto">
                         <FcLike className="text-3xl" style={{ opacity: todo.isCompleted ? 1 : 0.4 }}  />
@@ -237,7 +132,7 @@ function App() {
                       </div>
                       <div className="flex flex-col ml-3 min-w-0">
                         <div className="flex">
-                          <FcDislike className="text-3xl"  style={{ opacity: todo.isCompleted ? 1 : 0.4 }} />
+                          <FcDislike className="text-3xl"  style={{ opacity: todo.isCompleted ? 1 : 0.4 }} onClick={() => kalpTiklandi(todo?.id)}/>
                         </div>
                       </div>
                     </div>
@@ -246,7 +141,6 @@ function App() {
                 ))}
                 </div>
               </div>
-              {/* todo end */}
             </div>
           </div>
         </div>

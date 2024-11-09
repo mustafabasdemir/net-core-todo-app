@@ -38,7 +38,7 @@ namespace TodoApp.Repository
         {
             try
             {
-                return _dbSet.ToList();
+                return _dbSet.OrderByDescending(entity => EF.Property<DateTime>(entity, "CreatedDate")).ToList();
             }
             catch (Exception ex)
             {
