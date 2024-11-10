@@ -1,33 +1,6 @@
-import { useEffect, useState } from "react";
 import { FcPieChart } from "react-icons/fc";
 import { FcLike, FcDislike } from "react-icons/fc";
-import { getAllTodos } from "../../Services/GetAllService";
-
-const InfoCard = () => {
-
-    const [total, setTotal] = useState(0); // Toplam görev sayısı
-    const [completedCount, setCompletedCount] = useState(0); // Tamamlanan görev sayısı
-    const [incompleteCount, setIncompleteCount] = useState(0); 
-
-
-
-    useEffect(() => {
-        // API çağrısı
-        const fetchData = async () => {
-          try {
-            const data = await getAllTodos(); 
-            setTotal(data.length); 
-            const completed = data.filter((item) => item.isCompleted).length;
-            const incomplete = data.filter((item) => !item.isCompleted).length;
-            setCompletedCount(completed); 
-            setIncompleteCount(incomplete); 
-          } catch (error) {
-            console.error("veri alınamadı", error); 
-          }
-        };
-    
-        fetchData();
-      }, []);
+const InfoCard = ({ total, completedCount, incompleteCount }) => {
 
     return(
         <>

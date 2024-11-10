@@ -1,15 +1,37 @@
 import DateCard from "./components/Card/DateCart";
 import ToDoList from "./components/ToDoList/Liste";
 import InfoCard from "./components/Card/InfoCard";
+import { useEffect, useState } from "react";
+import { getAllTodos } from "./Services/GetAllService";
 
 function App() {
+
+  const [total, setTotal] = useState(0); // Toplam görev sayısı
+  const [completedCount, setCompletedCount] = useState(0); // Tamamlanan görev sayısı
+  const [incompleteCount, setIncompleteCount] = useState(0); 
+
+  const fetchData = async () => {
+    try {
+      const data = await getAllTodos();
+      setTotal(data.length);
+      setCompletedCount(data.filter((item) => item.isCompleted).length);
+      setIncompleteCount(data.filter((item) => !item.isCompleted).length);
+    } catch (error) {
+      console.error("veri alınamadı", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   return (
     <>
       <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900">
         <div className="container  m-4">
           <div className="max-w-3xl w-full mx-auto grid gap-4 grid-cols-1">
             {/* Info Card */}
-            <InfoCard />
+            <InfoCard total={total} completedCount={completedCount} incompleteCount={incompleteCount} />
 
             <div className="grid gap-4 grid-cols-1 md:grid-cols-2">
               <div className="flex flex-col p-3 relative items-center justify-center bg-gray-800 border border-gray-800 shadow-lg  rounded-2xl ">
@@ -29,7 +51,7 @@ function App() {
               </div>
 
               {/* todoo  */}
-              <ToDoList />
+              <ToDoList fetchData={fetchData} />
             </div>
           </div>
         </div>

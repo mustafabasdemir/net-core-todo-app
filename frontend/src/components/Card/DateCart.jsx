@@ -9,11 +9,10 @@ const DateCard = () => {
   // Güncel tarihi almak
   const currentDate = dayjs();
   
-  // Gün, ay, yıl, hafta günü gibi bilgileri almak
-  const day = currentDate.format('DD'); // Gün
-  const month = currentDate.format('MMMM'); // Ay adı
-  const year = currentDate.format('YYYY'); // Yıl
-  const dayOfWeek = currentDate.format('dddd'); // Hafta günü
+  const day = currentDate.format('DD'); 
+  const month = currentDate.format('MMMM'); 
+  const year = currentDate.format('YYYY'); 
+  const dayOfWeek = currentDate.format('dddd'); 
 
   return (
     
@@ -24,7 +23,7 @@ const DateCard = () => {
         Günün Sözü
       </h2>
 
-      <p className="text-gray-600 leading-relaxed text-center text-sm font-semibold">
+      <p className="text-gray-600 mt-4 leading-relaxed text-center text-sm font-semibold">
         Nerede olursan ol, Allah'a karşı sorumluluğunun bilincinde
         ol! Kötülüğün peşinden iyi bir şey yap ki onu yok etsin.
       </p>
