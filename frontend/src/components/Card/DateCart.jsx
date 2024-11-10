@@ -35,7 +35,7 @@ const DateCard = () => {
         <p className="text-lg font-bold">{month}</p>
         <p className="text-sm p-1">{year}</p>
       </div>
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center mt-4">
         <p className="text-5xl font-bold text-gray-800">{day}</p>
         <p className="text-lg text-gray-600">{dayOfWeek}</p>
       </div>
