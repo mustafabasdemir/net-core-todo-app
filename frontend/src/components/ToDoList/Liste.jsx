@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { FcLike, FcLikePlaceholder } from "react-icons/fc";
+import { FcLike, FcDislike } from "react-icons/fc";
 import { getAllTodos } from "../../Services/GetAllService";
 import AddModal from "../Modal/AddModal";
 import { FcFullTrash } from "react-icons/fc";
@@ -79,7 +79,7 @@ const ToDoList = ({ fetchData }) => {
 
                   {todo.isCompleted ?  <FcLike className="text-3xl transform hover:scale-125 transition-all duration-300" onClick={() => durumGuncelle(todo?.id,todo?.title,todo?.description,todo?.createdDate,!todo?.isCompleted)}/>
                                         :
-                                      <FcLikePlaceholder className="text-3xl transform hover:scale-125 transition-all duration-300" onClick={() =>durumGuncelle(todo?.id,todo?.title,todo?.description,todo?.createdDate,!todo?.isCompleted)}/>}
+                                      <FcDislike className="text-3xl transform hover:scale-125 transition-all duration-300" onClick={() =>durumGuncelle(todo?.id,todo?.title,todo?.description,todo?.createdDate,!todo?.isCompleted)}/>}
 
                   <div className="flex flex-col ml-3 min-w-0">
                     <div className="font-medium leading-none text-gray-100">
