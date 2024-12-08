@@ -13,7 +13,7 @@ const Toast = Swal.mixin({
   timerProgressBar: true,
 });
 
-// Genel bir fonksiyon oluşturuyoruz
+
 const showAlert = async (icon, title) => {
   await Toast.fire({
     icon,
@@ -21,5 +21,5 @@ const showAlert = async (icon, title) => {
   });
 };
 
-// Fonksiyonu dışa aktarıyoruz
+
 export default showAlert;

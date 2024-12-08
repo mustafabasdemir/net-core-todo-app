@@ -14,7 +14,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReactApp", policy =>
     {
-        policy.WithOrigins("http://localhost:3000") // React uygulamanýzýn adresini buraya yazýn
+        policy.WithOrigins("http://localhost:3000") 
               .AllowAnyMethod()
               .AllowAnyHeader();
     });
@@ -26,7 +26,7 @@ builder.Services.AddDbContext<ToDoContext>(options =>
     options.UseSqlServer(connectionString));
 
 //generic 
-// Generic Repository'yi Scoped olarak ekleyelim
+
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 // ToDoServiceManager
 builder.Services.AddScoped<IToDoService, ToDoServiceManager>();
@@ -49,7 +49,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-// CORS politikasýný kullan
+// CORS 
 app.UseCors("AllowReactApp");
 
 app.UseAuthorization();
